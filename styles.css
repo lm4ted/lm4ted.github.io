@@ -510,17 +510,19 @@ h1 {
 }
 
 .organizer-grid {
-  grid-template-columns: repeat(3, minmax(220px, 260px));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
-.organizer-grid .person-card:nth-child(4) {
-  grid-column: 1 / 2;
-  transform: translateX(54%);
+.organizer-grid .person-card {
+  grid-column: span 2;
 }
 
-.organizer-grid .person-card:nth-child(5) {
-  grid-column: 3 / 4;
-  transform: translateX(-54%);
+.organizer-grid .person-card:nth-child(1) {
+  grid-column: 2 / span 2;
+}
+
+.organizer-grid .person-card:nth-child(2) {
+  grid-column: 4 / span 2;
 }
 
 .person-card img {
@@ -704,8 +706,9 @@ h1 {
     grid-template-columns: repeat(2, minmax(220px, 260px));
   }
 
-  .organizer-grid .person-card:nth-child(4),
-  .organizer-grid .person-card:nth-child(5) {
+  .organizer-grid .person-card,
+  .organizer-grid .person-card:nth-child(1),
+  .organizer-grid .person-card:nth-child(2) {
     grid-column: auto;
     transform: none;
   }
