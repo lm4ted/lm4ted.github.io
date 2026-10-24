@@ -751,7 +751,7 @@ h1 {
   }
 }
 
-/* ===== Program section (paste at the end of styles.css, replacing the old program styles) ===== */
+/* ===== Program section ===== */
 
 .program-section {
   max-width: none;
@@ -760,7 +760,7 @@ h1 {
 }
 
 .program-section > * {
-  max-width: 900px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -771,12 +771,14 @@ h1 {
   color: var(--gold) !important;
   font-size: 20px;
   font-weight: 700;
+  text-align: center;
 }
 
 .program-note {
   margin: 0;
   color: #777d82;
   font-style: italic;
+  text-align: center;
 }
 
 .program-list {
@@ -789,10 +791,12 @@ h1 {
 
 .program-list li {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 130px 1fr;
   gap: 24px;
-  padding: 16px 28px;
+  padding: 14px 28px;
   border-bottom: 1px solid rgba(159, 116, 48, 0.22);
+  color: #4a453d;
+  line-height: 1.45;
 }
 
 .program-list li:last-child {
@@ -805,9 +809,49 @@ h1 {
   font-variant-numeric: tabular-nums;
 }
 
+.program-list strong {
+  font-weight: 600;
+}
+
+.program-list small {
+  display: block;
+  margin-top: 3px;
+  color: #6d6f70;
+  font-size: 14px;
+}
+
+.program-list .paper-id {
+  margin-right: 4px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.program-list em {
+  color: #6d6f70;
+}
+
 .program-list .program-break {
   background: #f7f1e6;
+}
+
+.program-list .program-break strong {
   color: #777d82;
+  font-weight: 500;
+}
+
+.program-list .program-session {
+  display: block;
+  padding: 12px 28px;
+  background: #f1ebe0;
+  color: #4a453d;
+  font-weight: 700;
+}
+
+.program-list .program-session small {
+  display: inline;
+  margin-left: 6px;
+  font-weight: 400;
 }
 
 @media (max-width: 620px) {
@@ -819,5 +863,10 @@ h1 {
     grid-template-columns: 1fr;
     gap: 4px;
     padding: 14px 20px;
+  }
+
+  .program-list .program-session small {
+    display: block;
+    margin-left: 0;
   }
 }
