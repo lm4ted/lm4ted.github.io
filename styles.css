@@ -751,7 +751,7 @@ h1 {
   }
 }
 
-/* ===== Program section (paste at the end of styles.css) ===== */
+/* ===== Program section (paste at the end of styles.css, replacing the old program styles) ===== */
 
 .program-section {
   max-width: none;
@@ -765,43 +765,59 @@ h1 {
   margin-right: auto;
 }
 
-.program-meta {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  margin-bottom: 26px;
-  background: rgba(159, 116, 48, 0.35);
-  border: 1px solid rgba(159, 116, 48, 0.35);
-}
-
-.program-meta div {
-  padding: 22px 16px;
-  background: #fff;
-}
-
-.program-meta span {
-  display: block;
-  margin-bottom: 6px;
-  color: #777d82;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-}
-
-.program-meta strong {
-  color: var(--gold);
-  font-size: 18px;
+.program-info {
+  margin-top: 0;
+  margin-bottom: 14px;
+  color: var(--gold) !important;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .program-note {
-  margin-bottom: 0;
+  margin: 0;
   color: #777d82;
   font-style: italic;
 }
 
+.program-list {
+  margin-top: 40px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  background: #fff;
+}
+
+.program-list li {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  padding: 16px 28px;
+  border-bottom: 1px solid rgba(159, 116, 48, 0.22);
+}
+
+.program-list li:last-child {
+  border-bottom: 0;
+}
+
+.program-list time {
+  color: var(--gold);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.program-list .program-break {
+  background: #f7f1e6;
+  color: #777d82;
+}
+
 @media (max-width: 620px) {
-  .program-meta {
+  .program-info {
+    font-size: 17px;
+  }
+
+  .program-list li {
     grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 14px 20px;
   }
 }
