@@ -123,25 +123,57 @@
 
         <p class="program-info">Nov. 15, 2026 · 13:30–18:00 · Room Rome</p>
 
-        <ul class="program-list">
-          <li><time>13:30–13:50</time><div><strong>Opening Remarks</strong><small>Workshop Organizers</small></div></li>
-          <li><time>13:50–14:30</time><div><strong>Invited Talk</strong><small>Yushuai Li · Title to be announced (40 min, including Q&amp;A)</small></div></li>
-          <li class="program-session"><div>Paper Session 1 <small>(Each paper presentation: 12 min talk + 3 min Q&amp;A)</small></div></li>
-          <li><time>14:30–14:45</time><div><span class="paper-id">DM321</span> When Do Foundation Models Pay Off? A Break-Even Analysis of Pretrained Time Series Forecasters</div></li>
-          <li><time>14:45–15:00</time><div><span class="paper-id">S10209</span> Beyond Scaling: Bayesian Temporal Inductive Bias for Time-Series Foundation Model Adaptation</div></li>
-          <li><time>15:00–15:15</time><div><span class="paper-id">S10207</span> Beyond Forecasting: Operationalizing Foundational Time Series Models for Industrial Digital Twins</div></li>
-          <li><time>15:15–15:30</time><div><span class="paper-id">DM949</span> DTMTimer: Dual-Path Token Merging and Cross-Modal Fusion for Multivariate Time Series Forecasting with Task-Aware LLMs</div></li>
-          <li class="program-break"><time>15:30–15:50</time><div><strong>Coffee Break</strong></div></li>
-          <li class="program-session"><div>Paper Session 2 <small>(Each paper presentation: 12 min talk + 3 min Q&amp;A)</small></div></li>
-          <li><time>15:50–16:05</time><div><span class="paper-id">S10201</span> SWAP: Adaptive Tabular In-Context Learning <em>(Online)</em></div></li>
-          <li><time>16:05–16:20</time><div><span class="paper-id">S10204</span> VibCA-Fusion: Self-supervised Contrastive Learning for Label-Efficient Industrial Vibration Sensing and Transformer Fault Detection</div></li>
-          <li><time>16:20–16:35</time><div><span class="paper-id">S10210</span> LLM Agents for Anomaly Detection and Root-Cause Classification in Refrigeration Systems</div></li>
-          <li><time>16:35–16:50</time><div><span class="paper-id">S10206</span> Time Series Agentic AI for Energy Systems</div></li>
-          <li><time>16:50–17:05</time><div><span class="paper-id">S10205</span> VeriTS: Verifiable Model-Enhanced Time-Series Queries on Blockchain Systems</div></li>
-          <li><time>17:05–17:20</time><div><span class="paper-id">S10208</span> TS-HotIndex: Time-Series-Aware Predictive Query Indexing for Blockchain Data Retrieval</div></li>
-          <li><time>17:20–17:35</time><div><strong>Best Paper Award Ceremony</strong></div></li>
-          <li><time>17:35–18:00</time><div><strong>Closing Remarks &amp; Group Photo</strong></div></li>
-        </ul>
+        <style>
+          /* Program styles live here so the section looks right even if styles.css is cached or older */
+          #program .agenda { max-width: 960px; margin: 40px auto 0; padding: 0; list-style: none; text-align: left;
+            background: #fff; border-radius: 14px; overflow: hidden;
+            box-shadow: 0 1px 2px rgba(68,63,56,.06), 0 10px 30px rgba(68,63,56,.08); }
+          #program .agenda li { margin: 0; }
+          #program .agenda .item { display: grid; grid-template-columns: 132px 1fr; gap: 24px; align-items: baseline;
+            padding: 16px 32px; border-top: 1px solid rgba(159,116,48,.14); }
+          #program .agenda .item:first-child { border-top: 0; }
+          #program .agenda time { color: var(--gold); font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+          #program .agenda .what { color: #4a453d; font-size: 16px; line-height: 1.5; }
+          #program .agenda .title { display: block; font-weight: 600; }
+          #program .agenda .sub { display: block; margin-top: 2px; color: #6d6f70; font-size: 14px; }
+          #program .agenda .pid { display: inline-block; min-width: 58px; margin-right: 8px; color: var(--gold); font-size: 12px;
+            font-weight: 700; letter-spacing: .04em; }
+          #program .agenda .tag { display: inline-block; margin-left: 6px; padding: 1px 9px; border-radius: 999px;
+            background: #edf2f3; color: #486f7d; font-size: 12px; font-weight: 600; vertical-align: 1px; }
+          #program .agenda .highlight { background: #fcfaf6; }
+          #program .agenda .highlight .title { color: #3d3831; }
+          #program .agenda .break { background: #f7f1e6; }
+          #program .agenda .break .title { color: #8a7a62; font-weight: 500; }
+          #program .agenda .session { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px;
+            padding: 14px 32px; background: #443f38; border-top: 0; }
+          #program .agenda .session-name { color: #fff; font-family: "Cormorant Garamond", Georgia, serif; font-size: 24px;
+            font-weight: 600; letter-spacing: .02em; line-height: 1.2; }
+          #program .agenda .session-rule { color: #d9c7a5; font-size: 13px; letter-spacing: .04em; }
+          @media (max-width: 620px) {
+            #program .agenda .item { grid-template-columns: 1fr; gap: 4px; padding: 14px 20px; }
+            #program .agenda .session { padding: 12px 20px; }
+          }
+        </style>
+
+        <ol class="agenda">
+          <li class="item highlight"><time>13:30–13:50</time><div class="what"><span class="title">Opening Remarks</span></div></li>
+          <li class="item highlight"><time>13:50–14:30</time><div class="what"><span class="title">Invited Talk</span><span class="sub">Yushuai Li, Aalborg University </span></div></li>
+          <li class="session"><span class="session-name">Paper Session 1</span><span class="session-rule">12 min talk + 3 min Q&amp;A per paper</span></li>
+          <li class="item paper"><time>14:30–14:45</time><div class="what"><span class="pid">DM321</span>When Do Foundation Models Pay Off? A Break-Even Analysis of Pretrained Time Series Forecasters</div></li>
+          <li class="item paper"><time>14:45–15:00</time><div class="what"><span class="pid">S10209</span>Beyond Scaling: Bayesian Temporal Inductive Bias for Time-Series Foundation Model Adaptation</div></li>
+          <li class="item paper"><time>15:00–15:15</time><div class="what"><span class="pid">S10207</span>Beyond Forecasting: Operationalizing Foundational Time Series Models for Industrial Digital Twins</div></li>
+          <li class="item paper"><time>15:15–15:30</time><div class="what"><span class="pid">DM949</span>DTMTimer: Dual-Path Token Merging and Cross-Modal Fusion for Multivariate Time Series Forecasting with Task-Aware LLMs</div></li>
+          <li class="item break"><time>15:30–15:50</time><div class="what"><span class="title">Coffee Break</span></div></li>
+          <li class="session"><span class="session-name">Paper Session 2</span><span class="session-rule">12 min talk + 3 min Q&amp;A per paper</span></li>
+          <li class="item paper"><time>15:50–16:05</time><div class="what"><span class="pid">S10201</span>SWAP: Adaptive Tabular In-Context Learning <span class="tag">Online</span></div></li>
+          <li class="item paper"><time>16:05–16:20</time><div class="what"><span class="pid">S10204</span>VibCA-Fusion: Self-supervised Contrastive Learning for Label-Efficient Industrial Vibration Sensing and Transformer Fault Detection</div></li>
+          <li class="item paper"><time>16:20–16:35</time><div class="what"><span class="pid">S10210</span>LLM Agents for Anomaly Detection and Root-Cause Classification in Refrigeration Systems</div></li>
+          <li class="item paper"><time>16:35–16:50</time><div class="what"><span class="pid">S10206</span>Time Series Agentic AI for Energy Systems</div></li>
+          <li class="item paper"><time>16:50–17:05</time><div class="what"><span class="pid">S10205</span>VeriTS: Verifiable Model-Enhanced Time-Series Queries on Blockchain Systems</div></li>
+          <li class="item paper"><time>17:05–17:20</time><div class="what"><span class="pid">S10208</span>TS-HotIndex: Time-Series-Aware Predictive Query Indexing for Blockchain Data Retrieval</div></li>
+          <li class="item highlight"><time>17:20–17:35</time><div class="what"><span class="title">Best Paper Award Ceremony</span></div></li>
+          <li class="item highlight"><time>17:35–18:00</time><div class="what"><span class="title">Closing Remarks &amp; Group Photo</span></div></li>
+        </ol>
       </section>
 
       <section id="submission" class="section submission-panel">
